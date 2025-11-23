@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/大众点评?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 123456 # 替换为自己的密码
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml # MyBatis映射文件路径
+  type-aliases-package: com.example.dianping.entity # 实体类包路径
+  configuration:
+    map-underscore-to-camel-case: true # 下划线转驼峰（如数据库字段create_time对应实体类createTime）
+  # Redis 配置
+  redis:
+    host: localhost  # Redis 服务器地址（本地测试用）
+    port: 6379       # Redis 端口（默认6379）
+    password: ""     # Redis 密码（未设置则为空）
+    database: 0      # 使用的数据库索引（默认0）
+    timeout: 3000ms  # 连接超时时间
+    lettuce:
+      pool:
+        max-active: 8   # 最大连接数
+        max-idle: 8     # 最大空闲连接数
+        min-idle: 2     # 最小空闲连接数
+        max-wait: -1ms  # 最大等待时间（-1表示无限制）
