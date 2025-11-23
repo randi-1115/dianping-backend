@@ -5,7 +5,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data // Lombok注解，自动生成getter/setter
+@Data
 public class Shop {
     private Long id;
     private String name;
