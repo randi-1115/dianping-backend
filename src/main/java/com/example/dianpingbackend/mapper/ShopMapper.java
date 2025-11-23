@@ -8,5 +8,11 @@ import java.util.List;
 public interface ShopMapper {
     // 查询所有店铺
     List<Shop> selectAll();
+    Shop selectById(Long id);
+    int insert(Shop shop);
+    int update(Shop shop);
+    int deleteById(Long id);
+    List<Shop> selectByCategory(String category);
+    List<Shop> selectByKeyword(String keyword);
 
 }
